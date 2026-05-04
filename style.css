@@ -324,6 +324,23 @@ a { color: inherit; text-decoration: none; }
   color: var(--white);
 }
 
+.card__subhead {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin: 28px 0 16px;
+  padding-top: 20px;
+  border-top: 1px solid var(--rule-ink);
+  color: var(--coral);
+}
+
+.card--coral .card__subhead {
+  color: var(--white);
+  border-top-color: rgba(255, 255, 255, 0.18);
+}
+
 /* ---------- about ---------- */
 #about.section {
   display: grid;
