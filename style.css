@@ -750,3 +750,317 @@ a { color: inherit; text-decoration: none; }
   }
   [data-reveal] { opacity: 1; transform: none; }
 }
+
+/* ---------- project detail pages ---------- */
+.project {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: clamp(96px, 12vw, 140px) var(--pad-x) clamp(40px, 6vw, 80px);
+}
+
+.project__back {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--coral);
+  margin: 0 0 32px;
+  border-bottom: 1.5px solid transparent;
+  padding-bottom: 4px;
+  transition: border-color 0.3s var(--ease);
+}
+
+.project__back:hover { border-color: var(--coral); }
+.project__back--bottom { margin: 56px 0 0; }
+
+.project__hero {
+  margin: 0 0 48px;
+  padding: 0 0 32px;
+  border-bottom: 2px solid var(--coral);
+}
+
+.project__eyebrow {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--coral);
+  margin: 0 0 18px;
+}
+
+.project__title {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 7vw, 96px);
+  line-height: 0.95;
+  color: var(--coral);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: -0.005em;
+}
+
+.project__subtitle {
+  font-family: var(--font-display);
+  font-size: clamp(16px, 2vw, 22px);
+  color: var(--ink-soft);
+  margin: 14px 0 0;
+}
+
+.project__subtitle em {
+  font-style: italic;
+  color: var(--coral);
+}
+
+.project__grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(24px, 4vw, 48px);
+  margin: 0 0 64px;
+}
+
+.project__poster {
+  margin: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--bg-2);
+  aspect-ratio: 2 / 3;
+  position: relative;
+}
+
+.project__poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project__poster figcaption {
+  position: absolute;
+  inset: auto 0 16px 0;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  background: var(--coral);
+  padding: 6px 16px;
+  border-radius: 999px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  display: none;
+}
+
+.project__poster--placeholder {
+  background:
+    linear-gradient(135deg, var(--coral) 0%, var(--coral-deep) 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 24px;
+}
+
+.project__poster--placeholder figcaption {
+  display: block;
+  position: static;
+  transform: none;
+  background: rgba(0, 0, 0, 0.18);
+  color: var(--white);
+}
+
+.project__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.meta-card {
+  background: var(--cream);
+  border: 1px solid var(--rule-soft);
+  border-radius: var(--radius-lg);
+  padding: clamp(24px, 3vw, 36px);
+}
+
+.meta-card__eyebrow {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--coral);
+  margin: 0 0 18px;
+}
+
+.meta-card__role-eyebrow {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--coral);
+  margin: 28px 0 6px;
+  padding-top: 20px;
+  border-top: 1px solid var(--rule-ink);
+}
+
+.meta-card__role {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.4vw, 28px);
+  color: var(--coral);
+  margin: 0;
+}
+
+.meta-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.meta-list li {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--rule-ink);
+  font-size: 14px;
+}
+
+.meta-list li:last-child { border-bottom: 0; }
+
+.meta-list span {
+  color: var(--ink-faint);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  align-self: center;
+}
+
+.meta-list strong {
+  color: var(--ink);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+@media (max-width: 760px) {
+  .project__grid { grid-template-columns: 1fr; }
+  .project__poster { max-width: 360px; aspect-ratio: 2 / 3; }
+  .meta-list li { grid-template-columns: 90px 1fr; gap: 10px; }
+}
+
+/* tracks */
+.section__head--project {
+  display: block;
+  border-bottom: 2px solid var(--coral);
+  padding-bottom: 22px;
+  margin-bottom: 32px;
+}
+
+.section__head--project .section__title {
+  font-size: clamp(36px, 5.5vw, 64px);
+  text-transform: uppercase;
+}
+
+.spotify--project {
+  margin: 0 0 48px;
+}
+
+.ep-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: ep;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.episode {
+  background: var(--cream);
+  border: 1px solid var(--rule-soft);
+  border-radius: var(--radius-md);
+  padding: clamp(20px, 3vw, 32px);
+}
+
+.episode__head {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  margin: 0 0 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--rule-ink);
+}
+
+.episode__num {
+  font-family: var(--font-display);
+  font-size: clamp(15px, 1.6vw, 18px);
+  color: var(--coral);
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.episode__title {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--ink-soft);
+}
+
+.track-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.track-list li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 18px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--rule-ink);
+}
+
+.track-list li:last-child { border-bottom: 0; }
+
+.track__title {
+  font-weight: 500;
+  color: var(--ink);
+  font-size: 14px;
+}
+
+.track__artist {
+  color: var(--coral);
+  font-size: 13px;
+  font-weight: 500;
+  text-align: right;
+}
+
+.track-list--placeholder li { color: var(--ink-faint); border-bottom: 0; padding: 4px 0; }
+.track-list--placeholder em { font-style: italic; font-size: 13px; }
+
+/* movie variant: single tracklist, no .episode wrapper needed */
+.flat-list {
+  background: var(--cream);
+  border: 1px solid var(--rule-soft);
+  border-radius: var(--radius-md);
+  padding: clamp(20px, 3vw, 32px);
+}
+
+/* clickable credit titles */
+.credit__title a {
+  color: inherit;
+  border-bottom: 1.5px solid transparent;
+  padding-bottom: 1px;
+  transition: border-color 0.3s var(--ease), color 0.3s var(--ease);
+}
+
+.credit__title a:hover {
+  color: var(--coral);
+  border-color: var(--coral);
+}
