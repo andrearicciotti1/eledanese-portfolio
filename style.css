@@ -192,7 +192,7 @@ a { color: inherit; text-decoration: none; }
 
 /* ---------- section base ---------- */
 .section {
-  padding: clamp(64px, 9vw, 120px) var(--pad-x);
+  padding: clamp(36px, 4.5vw, 64px) var(--pad-x);
   max-width: var(--max);
   margin: 0 auto;
 }
@@ -632,7 +632,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ---------- contact ---------- */
-.section--contact { padding-top: clamp(40px, 6vw, 80px); }
+/* contact uses base section padding for uniform inter-section spacing */
 
 .contact__card { text-align: left; }
 
